@@ -15,6 +15,7 @@ public class Main {
         } else if (args.length % 2 != 0 && args.length > 1) {
 
             boolean menuSelected = false;
+            Table table = new Table(args);
             SecureRandom random;
             Hmac hmacMachine;
             int machineMove;
@@ -63,7 +64,7 @@ public class Main {
                         System.out.println("Error. Enter a menu number from the list.");
                     }
                 } else if (sc.nextLine().equals("?")) {
-                    Table.viewTable(args);
+                    table.viewTable();
                 } else {
                     System.out.println("Error. Enter a menu number from the list.");
                 }

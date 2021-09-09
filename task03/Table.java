@@ -4,8 +4,9 @@ import dnl.utils.text.table.TextTable;
 
 public class Table {
 
-    public static void viewTable(String[] moves) {
+    private TextTable table;
 
+    public Table(String[] moves) {
         Referee referee = new Referee();
         String[] columnNames = new String[moves.length + 1];
         String[][] results = new String[moves.length][moves.length + 1];
@@ -34,7 +35,10 @@ public class Table {
                 }
             }
         }
-        TextTable tt = new TextTable(columnNames, results);
-        tt.printTable();
+        table = new TextTable(columnNames, results);
+    }
+
+    public void viewTable() {
+        table.printTable();
     }
 }
